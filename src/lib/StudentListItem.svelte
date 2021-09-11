@@ -158,7 +158,7 @@ async function generateAndDownloadPDF() {
 		const pdfBytes = await pdfDoc.saveAsBase64({ dataUri: true });
 		const a = document.createElement('a');
 		a.href = pdfBytes;
-		a.setAttribute('download', 'Rapport Mael Kerichard 08/09/2001');
+		a.setAttribute('download', `Rapport ${ report.studentName } ${ report.date.toDate().toLocaleDateString() }`);
 		a.click();
 		a.remove();
 	} catch (e) {
